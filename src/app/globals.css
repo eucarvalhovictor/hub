@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Apple (macOS/iOS): San Francisco — SF Pro Text no corpo, SF Pro Display nos títulos. */
+    --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+      var(--font-inter, Inter), ui-sans-serif, "Segoe UI", "Helvetica Neue", Helvetica,
+      Arial, sans-serif;
+    --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+      var(--font-inter, Inter), ui-sans-serif, "Segoe UI", "Helvetica Neue", Helvetica,
+      Arial, sans-serif;
+
+    /* Uma única fonte de verdade: canais RGB por tema, consumidos pelo tailwind.config.ts. */
+    --background: 255 255 255;
+    --foreground: 55 53 47;
+    --foreground-alpha: 1;
+    --secondary: 55 53 47;
+    --secondary-alpha: 0.65;
+    --tertiary: 55 53 47;
+    --tertiary-alpha: 0.4;
+    --border: 55 53 47;
+    --border-alpha: 0.09;
+    --input: 55 53 47;
+    --input-alpha: 0.16;
+    --ring: 35 131 226;
+    --accent: 35 131 226;
+    --accent-foreground: 255 255 255;
+    --accent-hover: 0 119 212;
+    --muted: 55 53 47;
+    --muted-alpha: 0.08;
+    --muted-foreground: 55 53 47;
+    --muted-foreground-alpha: 0.65;
+    --card: 255 255 255;
+    --card-foreground: 55 53 47;
+    --card-foreground-alpha: 1;
+    --popover: 255 255 255;
+    --popover-foreground: 55 53 47;
+    --popover-foreground-alpha: 1;
+    --primary: 35 131 226;
+    --primary-foreground: 255 255 255;
+    --danger: 235 87 87;
+    --danger-foreground: 255 255 255;
+    --success: 28 56 41;
+    --warning: 110 74 31;
+    --sidebar: 247 246 243;
+    --sidebar-foreground: 55 53 47;
+    --sidebar-foreground-alpha: 1;
+    --sidebar-border: 55 53 47;
+    --sidebar-border-alpha: 0.09;
+
+    color-scheme: light;
+  }
+
+  .dark {
+    --background: 25 25 25;
+    --foreground: 255 255 255;
+    --foreground-alpha: 0.81;
+    --secondary: 255 255 255;
+    --secondary-alpha: 0.46;
+    --tertiary: 255 255 255;
+    --tertiary-alpha: 0.4;
+    --border: 255 255 255;
+    --border-alpha: 0.13;
+    --input: 255 255 255;
+    --input-alpha: 0.24;
+    --ring: 35 131 226;
+    --accent: 35 131 226;
+    --accent-foreground: 255 255 255;
+    --accent-hover: 76 155 245;
+    --muted: 255 255 255;
+    --muted-alpha: 0.055;
+    --muted-foreground: 255 255 255;
+    --muted-foreground-alpha: 0.46;
+    --card: 32 32 32;
+    --card-foreground: 255 255 255;
+    --card-foreground-alpha: 0.81;
+    --popover: 32 32 32;
+    --popover-foreground: 255 255 255;
+    --popover-foreground-alpha: 0.81;
+    --primary: 35 131 226;
+    --primary-foreground: 255 255 255;
+    --danger: 235 87 87;
+    --danger-foreground: 255 255 255;
+    --success: 43 89 63;
+    --warning: 138 107 63;
+    --sidebar: 32 32 32;
+    --sidebar-foreground: 255 255 255;
+    --sidebar-foreground-alpha: 0.81;
+    --sidebar-border: 255 255 255;
+    --sidebar-border-alpha: 0.13;
+
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: rgb(var(--border) / var(--border-alpha));
+  }
+
+  html {
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground) / var(--foreground-alpha));
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: rgb(var(--foreground) / var(--foreground-alpha));
+  }
+  h1 {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  h4 {
+    font-size: 16px;
+  }
+  label {
+    font-size: 14px;
+  }
+  input,
+  textarea,
+  select {
+    font-size: 14px;
+  }
+
+  /* iOS Safari dá zoom automático em campos com fonte < 16px. */
+  @media (max-width: 767px) {
+    input,
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+}
+
+@layer components {
+  .notion-font {
+    font-family: var(--font-ui);
+  }
+  .serif-font {
+    font-family: "Lyon-Text", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .border-line {
+    border-color: rgb(var(--border) / var(--border-alpha));
+  }
+}

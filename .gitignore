@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+build/
+.env*.local
+.env
+*.log
+.DS_Store
+.idea/
+.vscode/
+supabase/.temp/
+supabase/.storage/
+supabase/functions/
+next-env.d.ts
